@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({ colors }) => {
+const NavLinks = ({ colors }) => {
     const links = colors.map(color => (
         <NavLink key={color.color} to={`/colors/${color.color.toLowerCase()}`}>{color.color}</NavLink>
     ))
@@ -12,4 +12,4 @@ const NavBar = ({ colors }) => {
     )
 }
 
-export default NavBar;
+export default NavLinks;

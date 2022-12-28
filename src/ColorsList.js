@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ColorForm from "./ColorForm"
-import ColorDetail from "./ColorDetail"
+import NavLinks from "./Nav"
 
 const ColorList = () => {
     const INITIAL_STATE = [
@@ -16,7 +15,8 @@ const ColorList = () => {
     return (
         <div className="ColorsList">
             <h1 className="ColorsList-title">Color Factory</h1>
-            {/* navbar goes here */}
+            <Link to="/colors/new">Add a Color</Link>
+            <NavLinks colors={colors} />
         </div>
     )
 };

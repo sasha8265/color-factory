@@ -1,14 +1,14 @@
 import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import ColorRoutes from "./ColorRoutes";
-import NavBar from "./Nav";
+import NavLinks from "./Nav";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <NavBar />
                 <ColorRoutes />
+                <NavLinks />
             </BrowserRouter>
         </div>
     );
