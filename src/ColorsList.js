@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import NavLinks from "./Nav"
 
 const ColorList = () => {
@@ -15,7 +16,7 @@ const ColorList = () => {
     return (
         <div className="ColorsList">
             <h1 className="ColorsList-title">Color Factory</h1>
-            <Link to="/colors/new">Add a Color</Link>
+            <Link colors={colors} addColor={addColor} to="/colors/new">Add a Color</Link>
             <NavLinks colors={colors} />
         </div>
     )
