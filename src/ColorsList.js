@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import NavLinks from "./Nav"
 
-const ColorList = () => {
-    const INITIAL_STATE = [
-        { id: "crimson", color: "crimson" },
-        { id: "teal", color: "teal" },
-        { id: "gold", color: "gold" }
-    ]
-    const [colors, setColors] = useState(INITIAL_STATE);
-    const addColor = (newColor) => {
-        setColors(colors => [...colors, ...newColor]);
-    };
+
+const ColorList = ({colors}) => {
+    const colorLinks = Object.keys(colors).map(color => (
+        <li key={color}><Link to={`/colors/${color}`}>{color}</Link></li>
+    ))
+    
 
     return (
-        <div className="ColorsList">
-            <h1 className="ColorsList-title">Color Factory</h1>
-            <Link colors={colors} addColor={addColor} to="/colors/new">Add a Color</Link>
-            <NavLinks colors={colors} />
+        <div>
+            <div className="ColorsList">
+                <h1 className="ColorsList-title">Color Factory</h1>
+                <Link to="/colors/new">Add a Color</Link>
+            </div>
+            <div className="ColorsList-list">
+                <h2 className="ColorsList-intro">Select a Color</h2>
+                <ul>
+                    {colorLinks}
+                </ul>
+            </div>
         </div>
     )
 };

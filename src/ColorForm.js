@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /** Form for adding a new color to add to a list / navbar.
  *
@@ -7,8 +8,9 @@ import React, { useState } from "react";
  */
 
 const ColorForm = ({addColor}) => {
-    const INITIAL_STATE = { color: "" };
+    const INITIAL_STATE = { name: "", hex: "#ffffff" };
     const [formData, setFormData] = useState[INITIAL_STATE];
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,20 +25,29 @@ const ColorForm = ({addColor}) => {
     */
     const handleSubmit = (e) => {
         e.preventDefault();
-        addColor({ ...formData });
-        setFormData(INITIAL_STATE);
+        addColor({ [formData.name]: formData.hex });
+        navigate("/colors")
     }
+
 
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="color" >Choose a color </label>
             <input
-                id="color"
+                id="hex"
                 type="color"
-                name="color"
-                value={formData.color}
+                name="hex"
+                value={formData.hex}
                 onChange={handleChange} />
-            <button>Add Color</button>
+            <label htmlFor="name" >Color Name </label>
+            <input
+                id="name"
+                type="text"
+                placeholder="Enter a color name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange} />
+            <button onSubmit={handleSubmit}>Add Color</button>
         </form>
     )
 

@@ -7,9 +7,9 @@ const ColorDetail = () => {
 
     if (!color) return <Navigate to="/colors" replace />
     return (
-        <div className="ColorDetail">
+        <div className="ColorDetail" style={{ backgroundColor: color }}>
             <Link to="/colors">Back</Link>
-            <h1 className="ColorDetail-title">{color.color}</h1>
+            <h1 className="ColorDetail-title">{color}</h1>
         </div>
     )
 };
