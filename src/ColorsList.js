@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+/** Use colors object from parent to render list of user's colors with links */
 const ColorList = ({colors}) => {
     const colorLinks = Object.keys(colors).map(color => (
         <li key={color}><Link to={`/colors/${color}`}>{color}</Link></li>

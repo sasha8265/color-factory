@@ -19,9 +19,7 @@ const ColorForm = ({addColor}) => {
         }))
     }
 
-    /** Send {color} to parent & clear form. 
-     * Redirect to colorList after submit
-    */
+    /** Send {color} to parent and redirect to colorList after submit */
     const handleSubmit = (e) => {
         e.preventDefault();
         addColor({ [formData.name]: formData.hex });
