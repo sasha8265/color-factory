@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
  */
 
 const ColorForm = ({addColor}) => {
-    const INITIAL_STATE = { name: "", hex: "#ffffff" };
+    const INITIAL_STATE = { name: "white", hex: "#ffffff" };
     const [formData, setFormData] = useState[INITIAL_STATE];
     const navigate = useNavigate();
 
@@ -21,24 +21,17 @@ const ColorForm = ({addColor}) => {
     }
 
     /** Send {color} to parent & clear form. 
-     * Redirect to home page after submit
+     * Redirect to colorList after submit
     */
     const handleSubmit = (e) => {
         e.preventDefault();
         addColor({ [formData.name]: formData.hex });
-        navigate("/colors")
+        navigate(`/colors/${formData.name}`)
     }
 
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="color" >Choose a color </label>
-            <input
-                id="hex"
-                type="color"
-                name="hex"
-                value={formData.hex}
-                onChange={handleChange} />
             <label htmlFor="name" >Color Name </label>
             <input
                 id="name"
@@ -47,6 +40,15 @@ const ColorForm = ({addColor}) => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange} />
+            
+            <label htmlFor="color" >Choose a color </label>
+            <input
+                id="hex"
+                type="color"
+                name="hex"
+                value={formData.hex}
+                onChange={handleChange} />
+            
             <button onSubmit={handleSubmit}>Add Color</button>
         </form>
     )
