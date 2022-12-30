@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
+import "./ColorDetail.css"
 
 
 const ColorDetail = () => {
@@ -15,8 +16,11 @@ const ColorDetail = () => {
     
     return (
         <div className="ColorDetail" style={{ backgroundColor: hex }}>
-            <Link to="/colors">Back</Link>
-            <h1 className="ColorDetail-title">{color}</h1>
+            <div className="ColorDetail-header">
+                <h1 className="ColorDetail-title">{color}</h1>
+                <Link to="/colors">Back</Link>
+            </div>
+            
         </div>
     )
 };
