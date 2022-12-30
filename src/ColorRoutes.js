@@ -16,14 +16,8 @@ const ColorRoutes = () => {
     useEffect(() => localStorage.setItem("colors", JSON.stringify(colors)), [colors]);
     
     const addColor = (newColor) => {
-        setColors(colors => [...colors, ...newColor]);
+        setColors(colors => ({ ...colors, ...newColor }));
     };
-
-    // const renderColor = (props) => {
-    //     const { color } = props.match.params;
-    //     const hex = colors[color];
-    //     return <ColorDetail {...props} hex={hex} color={color} />
-    // }
 
     return (
         <Routes>
