@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
  */
 
 const ColorForm = ({addColor}) => {
-    const INITIAL_STATE = { name: "white", hex: "#ffffff" };
-    const [formData, setFormData] = useState[INITIAL_STATE];
+    const [formData, setFormData] = useState({ name: "", hex: "#ffffff" });
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -26,7 +25,7 @@ const ColorForm = ({addColor}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addColor({ [formData.name]: formData.hex });
-        navigate(`/colors/${formData.name}`)
+        navigate(`/colors`)
     }
 
 
