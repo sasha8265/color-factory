@@ -1,0 +1,47 @@
+/* .ColorsList {
+    height: 100vh;
+    position: relative;
+} */
+
+.ColorsList-header {
+    background-color: black;
+    height: 15vh;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.ColorsList-header a {
+    line-height: 3em;
+    font-size: 1.3em;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 0.6em 1em;
+    border: 3px solid rgba(255, 255, 255, 0);
+}
+
+.ColorsList-title {
+    color: white;
+    font-size: 3em;
+    margin: auto;
+}
+
+.ColorsList-header a:hover {
+    border: 3px solid white;
+}
+
+.ColorsList-list {
+    margin-top: 3em;
+}
+
+.ColorsList-intro {
+    text-transform: uppercase;
+}
+
+.ColorsList-list ul {
+    list-style: none;
+    line-height: 1.5em;
+    font-size: 1.3em;
+}

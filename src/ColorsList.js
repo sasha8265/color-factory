@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ColorList.css"
 
 /** Use colors object from parent to render list of user's colors with links */
 const ColorList = ({colors}) => {
@@ -9,8 +10,8 @@ const ColorList = ({colors}) => {
     
 
     return (
-        <div>
-            <div className="ColorsList">
+        <div className="ColorsList">
+            <div className="ColorsList-header">
                 <h1 className="ColorsList-title">Color Factory</h1>
                 <Link to="/colors/new">Add a Color</Link>
             </div>
